@@ -6,22 +6,22 @@ const Goal = require("../models/goalModel");
  * @route GET /api/goals
  * @access Private
  */
+
 const getGoals = asyncHandler(async (req, res) => {
   const goals = await Goal.find();
   res.status(200).json(goals);
 });
+
+
+
 /**
  * @description POST goals
  * @route GET /api/goals
  * @access Private
  */
+
 const createGoal = asyncHandler(async (req, res) => {
   if (!req.body.text) {
-    /**
-     * default error handler
-     */
-    // res.status(400).json({message:"Please add a valid text"})
-
     res.status(400);
     throw new Error("Please add valid text");
   }
@@ -31,11 +31,15 @@ const createGoal = asyncHandler(async (req, res) => {
   });
   res.status(200).json(goal);
 });
+
+
+
 /**
  * @description PUT goals
  * @route PUT /api/goals/:id
  * @access Private
  */
+
 const updateGoal = asyncHandler(async (req, res) => {
   const goal = await Goal.findById(req.params.id);
   if (!goal) {
@@ -47,11 +51,15 @@ const updateGoal = asyncHandler(async (req, res) => {
   })
   res.status(200).json(updatedGoal);
 });
+
+
+
 /**
  * @description DELETE goals
  * @route DELETE /api/goals/:id
  * @access Private
  */
+
 const deleteGoal = asyncHandler(async (req, res) => {
     const goal = await Goal.findById(req.params.id);
     if (!goal) {
