@@ -75,8 +75,14 @@ const registerUser = asyncHandler(async(req, res)=>{
  * @access Public
  */
 
- const getMe = asyncHandler((req, res)=>{
-    res.json({message:"user data"})
+ const getMe = asyncHandler(async(req, res)=>{
+    const {name,email,id} = await User.findById(req.user.id)
+    res.status(200).json({
+        _id:id,
+        name,
+        email
+    })
+
 })
 
 /**
