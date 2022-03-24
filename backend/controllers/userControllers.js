@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async(req, res)=>{
         password:hashedPassword
     })
     if(user){
-        res.status(200).json({
+        res.status(201).  json({
             _id:user._id,
             token:generateToken(user._id)
         })
