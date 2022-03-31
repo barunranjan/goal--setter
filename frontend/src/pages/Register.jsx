@@ -30,7 +30,7 @@ const Register = () => {
         <p>Please Create an Account</p>
       </section>
       <section className="form">
-        <form onSubmit={{ onSubmit }}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="text"

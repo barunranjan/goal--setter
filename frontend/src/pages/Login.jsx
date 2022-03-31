@@ -28,7 +28,7 @@ const Login = () => {
         <p>Login to set goals</p>
       </section>
       <section className="form">
-        <form onSubmit={{ onSubmit }}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="email"
