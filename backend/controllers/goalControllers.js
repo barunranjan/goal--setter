@@ -24,7 +24,6 @@ const createGoal = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please add valid text");
   }
-
   const goal = await Goal.create({
     text: req.body.text,
     user: req.user.id,
