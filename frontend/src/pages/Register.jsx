@@ -48,7 +48,6 @@ const Register = () => {
         email,
         password,
       };
-      console.log(formData);
       dispatch(register(userData));
     }
   };
